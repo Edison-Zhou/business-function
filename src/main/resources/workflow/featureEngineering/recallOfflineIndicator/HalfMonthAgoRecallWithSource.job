@@ -1,0 +1,4 @@
+type=command
+dependencies=HalfMonthAgoALSRec4Movie,HalfMonthAgoCluster,HalfMonthAgoHotVideo,HalfMonthAgoSimilarityRec
+mainclass=cn.featureEngineering.recallOfflineIndicator.HalfMonthAgoRecallWithSource
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} zhou.zhenyu_${mainclass} --env ${env}

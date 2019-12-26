@@ -1,0 +1,4 @@
+#moretv重排序 电视剧 仙侠玄幻
+type=command
+mainclass=cn.moretv.doraemon.biz.tabReorder.TreeSiteReorder
+command=sh ${working.dir}/../../../../bin/submit.sh ${mainclass} baozhi_${mainclass}_${videoType} --videoType ${videoType}  --alg reorderALS --code tv_xianxiaxuanhuan --codeType 3 --videoTypePrefix t --env ${env}

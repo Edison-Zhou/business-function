@@ -1,0 +1,2 @@
+type=command
+command=sh ${working.dir}/../bin/ai_base_behavior_raw_play_day.sh  ${startDate} ${endDate}

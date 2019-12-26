@@ -1,0 +1,4 @@
+type=command
+dependencies=SimilarDefaultVip,SimilarTagVip
+mainclass=cn.moretv.doraemon.biz.similar.SimilarMixVip
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} wang.baozhi_${mainclass} --env ${env}

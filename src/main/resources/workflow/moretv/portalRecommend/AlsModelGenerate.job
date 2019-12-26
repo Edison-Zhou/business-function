@@ -1,0 +1,3 @@
+type=command
+mainclass=cn.moretv.doraemon.biz.portalRecommend.AlsModelGenerate
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} wang.baozhi_${mainclass} --env ${env}

@@ -1,0 +1,7 @@
+type=command
+mainclass=cn.moretv.doraemon.biz.streaming.InterestStreaming
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} cheng.huan_${mainclass} --env ${env}\
+${sourceBrokers} \
+${groupId} \
+${sourceTopics} \
+${duration} \

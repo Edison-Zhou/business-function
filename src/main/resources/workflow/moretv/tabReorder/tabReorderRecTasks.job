@@ -1,0 +1,3 @@
+type=command
+dependencies=MedusaTabComic,MedusaTabJilu,MedusaTabKids,MedusaTabMovie,MedusaTabTV
+command=echo "tabReorderRecTasks is over ..."

@@ -1,0 +1,4 @@
+type=command
+dependencies=SimilarMix
+mainclass=cn.moretv.doraemon.biz.detail.DetailHotRecommend
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} guo.hao_${mainclass} --env ${env}

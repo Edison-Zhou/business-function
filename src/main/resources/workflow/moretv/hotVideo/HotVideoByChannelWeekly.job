@@ -1,0 +1,4 @@
+# 分类型(频道)生成一定时间段内的热门影片
+type=command
+mainclass=cn.moretv.doraemon.biz.hotVideo.HotVideoByChannelWeekly
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} zhou.zhenyu_${mainclass} --env ${env}

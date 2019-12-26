@@ -1,0 +1,3 @@
+type=command
+mainclass=cn.featureEngineering.sparkOnAngel.WideAndDeep
+command=sh ${working.dir}/../../../bin/submit_angel.sh ${mainclass} cheng.huan_${mainclass} --env ${env}

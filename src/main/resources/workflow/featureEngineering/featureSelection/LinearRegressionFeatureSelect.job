@@ -1,0 +1,3 @@
+type=command
+mainclass=cn.featureEngineering.featureSelection.LinearRegression
+command=sh ${working.dir}/../../../bin/submit_multiParam.sh ${mainclass} cheng.huan_${mainclass} --env ${env}

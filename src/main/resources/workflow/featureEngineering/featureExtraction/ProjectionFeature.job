@@ -1,0 +1,4 @@
+type=command
+dependencies=VideoAndUserFeature
+mainclass=cn.featureEngineering.featureExtraction.ProjectionFeature
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} cheng.huan_${mainclass} --env ${env}

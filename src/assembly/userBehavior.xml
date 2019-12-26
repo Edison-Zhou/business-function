@@ -1,0 +1,36 @@
+<assembly>
+    <id>userBehavior</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+
+    <fileSets>
+        <!-- bin/*.sh -->
+        <fileSet>
+            <directory>src/main/resources/workflow/etl/userBehavior/bin</directory>
+            <outputDirectory>/bin</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+            <fileMode>755</fileMode>
+        </fileSet>
+        <!-- bin/*.sh -->
+        <fileSet>
+            <directory>src/main/resources/workflow/etl/userBehavior/job</directory>
+            <outputDirectory>/job</outputDirectory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources/workflow/etl/userBehavior/sql</directory>
+            <outputDirectory>./sql</outputDirectory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+
+    </fileSets>
+</assembly>

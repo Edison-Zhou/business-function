@@ -1,0 +1,4 @@
+type=command
+dependencies=ProjectionFeature
+mainclass=cn.featureEngineering.featureExtraction.NormalizedFeature
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} cheng.huan_${mainclass} --env ${env}

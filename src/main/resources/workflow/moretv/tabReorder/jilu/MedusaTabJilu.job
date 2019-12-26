@@ -1,0 +1,4 @@
+#moretv重排序
+type=command
+dependencies=MedusaTabJiluSimilarALSJiluForVip,MedusaTabJiluSimilarALSJiluForZhishijiangtang
+command=echo "send jilu reorder data to kafka end"

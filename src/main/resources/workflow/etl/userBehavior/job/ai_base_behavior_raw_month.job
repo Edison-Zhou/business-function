@@ -1,0 +1,3 @@
+type=command
+dependencies=ai_base_behavior_raw_play_day,ai_base_behavior_raw_collect_day
+command=sh ${working.dir}/../bin/ai_base_behavior_raw_month.sh  ${startDate} ${endDate}

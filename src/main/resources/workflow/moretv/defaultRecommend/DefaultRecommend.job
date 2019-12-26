@@ -1,0 +1,3 @@
+type=command
+dependencies=otherDefault,DetailDefault
+command= echo "is ok ..."

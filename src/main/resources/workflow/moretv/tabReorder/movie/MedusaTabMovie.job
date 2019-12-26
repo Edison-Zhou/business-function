@@ -1,0 +1,4 @@
+#moretv重排序
+type=command
+dependencies=MedusaTabMovieSimilarALSMoviesForYataijingxuan,MedusaTabMovieSimilarALSMoviesForXilidongzuo,MedusaTabMovieSimilarALSMoviesForHaolaiwujuzhi,MedusaTabMovieSimilarALSMoviesForKexuefangxiang,MedusaTabMovieSimilarALSMoviesForYiyuanpiaofang,MedusaTabMovieSohuYueTing
+command=echo "send movie reorder data to kafka end"

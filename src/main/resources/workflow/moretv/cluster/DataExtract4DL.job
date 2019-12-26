@@ -1,0 +1,3 @@
+type=command
+mainclass=cn.moretv.doraemon.biz.cluster.DataExtract4DL
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} cheng.huan_${mainclass} --env ${env}

@@ -1,0 +1,4 @@
+#moretv重排序 犀利动作重排序
+type=command
+mainclass=cn.moretv.doraemon.biz.tabReorder.TreeSiteReorder
+command=sh ${working.dir}/../../../../bin/submit.sh ${mainclass} baozhi_${mainclass}_${videoType}   --videoType ${videoType}  --offset 3000 --alg reorderALS --code 1_movie_tag_kehuan --codeType 4 --videoTypePrefix m --env ${env}

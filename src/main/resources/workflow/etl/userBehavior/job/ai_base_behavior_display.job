@@ -1,0 +1,2 @@
+type=command
+command=sh ${working.dir}/../bin/ai_base_behavior_display.sh ${startDate} ${endDate}

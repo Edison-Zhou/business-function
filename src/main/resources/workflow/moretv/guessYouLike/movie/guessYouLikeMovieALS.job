@@ -1,0 +1,4 @@
+#猜你喜欢 电影频道
+type=command
+mainclass=cn.moretv.doraemon.biz.guessYouLike.GuessYouLikeMovieALS
+command=sh ${working.dir}/../../../../bin/submit.sh ${mainclass} zhou.zhenyu_${mainclass} --env ${env} --numRecommendations ${numRecommendations} --filterTopN ${filterTopN}

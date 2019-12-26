@@ -1,0 +1,5 @@
+#medusa 重排序中 用户分组
+type=command
+mainclass=cn.moretv.doraemon.biz.tabReorder.User2GroupByALS
+command=sh ${working.dir}/../../../../bin/submit.sh ${mainclass} baozhi_${mainclass}_${videoType}   --videoType ${videoType} --numOfDays ${numOfDays} --score ${score}  --userGroup ttu --ifABtest false --alg reorderALS --env ${env}
+

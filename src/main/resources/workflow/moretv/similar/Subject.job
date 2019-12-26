@@ -1,0 +1,3 @@
+type=command
+mainclass=cn.moretv.doraemon.biz.detail.SubjectRecommend
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} li.tuo_${mainclass} --env ${env}

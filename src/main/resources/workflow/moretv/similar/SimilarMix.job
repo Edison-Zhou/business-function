@@ -1,0 +1,4 @@
+type=command
+dependencies=SimilarDefault,SimilarTag
+mainclass=cn.moretv.doraemon.biz.similar.SimilarMix
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} li.tuo_${mainclass} --env ${env}

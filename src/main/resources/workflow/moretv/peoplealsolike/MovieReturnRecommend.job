@@ -1,0 +1,4 @@
+type=command
+dependencies=AlsRecommendMovie
+mainclass=cn.moretv.doraemon.biz.peoplealsolike.MovieReturnRecommend
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} guo.hao_${mainclass} --env ${env}

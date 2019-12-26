@@ -1,0 +1,3 @@
+type=command
+mainclass=cn.moretv.doraemon.biz.defaultRecommend.DetailDefaultRecommend
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} guo.hao_${mainclass} --env ${env}

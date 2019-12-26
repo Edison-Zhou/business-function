@@ -1,0 +1,3 @@
+type=command
+dependencies=MedusaTabComicSimilarALSUser2Group,MedusaTabJiluSimilarALSUser2Group,MedusaTabKidsSimilarALSUser2Group,MedusaTabMovieSimilarALSUser2Group,MedusaTabTvSimilarALSUser2Group
+command=echo "tabReorderGroup is over ..."

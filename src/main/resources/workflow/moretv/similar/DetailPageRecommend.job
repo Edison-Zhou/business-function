@@ -1,0 +1,4 @@
+type=command
+dependencies=DetailHot,Theme,Subject,DetailVip
+mainclass=cn.moretv.doraemon.biz.detail.DetailPageRecommend
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} li.tuo_${mainclass} --env ${env}

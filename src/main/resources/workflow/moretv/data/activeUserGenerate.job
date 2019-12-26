@@ -1,0 +1,4 @@
+#生成每日活跃用户数据
+type=command
+mainclass=cn.moretv.doraemon.biz.data.ActiveUserGenerate
+command=sh ${working.dir}/../../../bin/submit.sh ${mainclass} baozhi_${mainclass} --env ${env}

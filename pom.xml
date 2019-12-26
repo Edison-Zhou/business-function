@@ -1,0 +1,308 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>doraemon</artifactId>
+        <groupId>cn.moretv.doraemon</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>DoraemonBiz</artifactId>
+    <properties>
+        <doraemon.version>1.1-SNAPSHOT</doraemon.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <package.output.dir>${project.build.directory}</package.output.dir>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <scala.version>2.11.6</scala.version>
+        <scala.binary.version>2.11</scala.binary.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <slf4j.version>1.7.10</slf4j.version>
+        <log4j2.version>2.4.1</log4j2.version>
+        <phoenix.version>4.10.0-HBase-1.2</phoenix.version>
+        <spark.version>2.4.0</spark.version>
+        <hadoop.version>2.6.0</hadoop.version>
+        <!--生产环境 hive使用2.1.1,但是spark的内建hive版本为1.2.1-->
+        <hive.version>1.2.1</hive.version>
+        <kafka.version>1.1.0</kafka.version>
+        <ai.h2o.version>2.1.2</ai.h2o.version>
+        <couchbase.version>2.5.3</couchbase.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>cn.moretv.doraemon</groupId>
+            <artifactId>doraemon-algorithm</artifactId>
+            <version>${doraemon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.moretv.doraemon</groupId>
+            <artifactId>doraemon-reorder</artifactId>
+            <version>${doraemon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.moretv.doraemon</groupId>
+            <artifactId>doraemon-data-reader</artifactId>
+            <version>${doraemon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.whaley.bigdata</groupId>
+            <artifactId>sdk_2.11</artifactId>
+            <version>1.0.6</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>kafka_2.11</artifactId>
+                    <groupId>org.apache.kafka</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>cassandra-driver-core</artifactId>
+                    <groupId>com.datastax.cassandra</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jedis</artifactId>
+                    <groupId>redis.clients</groupId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+        <dependency>
+            <groupId>cn.moretv.doraemon</groupId>
+            <artifactId>doraemon-data-writer</artifactId>
+            <version>${doraemon.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.7.3</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.28</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-graphx_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql-kafka-0-10_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>6.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.stuxuhai</groupId>
+            <artifactId>jpinyin</artifactId>
+            <version>1.1.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.couchbase.client</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${couchbase.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tencent.angel</groupId>
+            <artifactId>spark-on-angel-core</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tencent.angel</groupId>
+            <artifactId>spark-on-angel-mllib</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${artifactId}-${version}</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependency</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeScope>runtime</includeScope>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scalaVersion>${scala.version}</scalaVersion>
+                    <args>
+                        <arg>-target:jvm-1.5</arg>
+                    </args>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>make-DoraemonBiz-zip</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/assembly/DoraemonBiz.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>make-userBehavior-zip</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/assembly/userBehavior.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>deploy</id>
+            <dependencies>
+                <!-- 用来排除服务器已经提供的jar包 start ,for assembly assembly-zip.xml-->
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-core_${scala.binary.version}</artifactId>
+                    <version>${spark.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-sql_${scala.binary.version}</artifactId>
+                    <version>${spark.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-hive_${scala.binary.version}</artifactId>
+                    <version>${spark.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-graphx_${scala.binary.version}</artifactId>
+                    <version>${spark.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-mllib_${scala.binary.version}</artifactId>
+                    <version>${spark.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.tencent.angel</groupId>
+                    <artifactId>spark-on-angel-core</artifactId>
+                    <version>2.2.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>com.tencent.angel</groupId>
+                    <artifactId>spark-on-angel-mllib</artifactId>
+                    <version>2.2.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                <!-- 用来排除服务器已经提供的jar包 end -->
+            </dependencies>
+
+        </profile>
+    </profiles>
+
+</project>

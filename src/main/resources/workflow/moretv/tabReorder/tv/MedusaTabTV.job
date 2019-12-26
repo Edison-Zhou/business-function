@@ -1,0 +1,4 @@
+#moretv重排序 kmenas模型生成
+type=command
+dependencies=MedusaTabTvSimilarALSTVForDalujuchang,MedusaTabTvSimilarALSTVForVIP,MedusaTabTvSimilarALSTVForZhanzhengfengyun,MedusaTabTvSimilarALSTVForJiatingqinggan,MedusaTabTvSimilarALSTVForYueyuzhuanqu,MedusaTabTvSohu,MedusaTabTvSimilarALSTVXianXiaXuanhuan
+command=echo "send tv reorder data to kafka end"

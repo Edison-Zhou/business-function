@@ -1,0 +1,6 @@
+#猜你喜欢 电视剧频道
+type=command
+mainclass=cn.moretv.doraemon.biz.guessYouLike.GuessYouLikeVip
+command=sh ${working.dir}/../../../../bin/submit.sh ${mainclass} baozhi_${mainclass} --env ${env} --numDaysPlay ${numDaysPlay} --numRecommendations ${numRecommendations} --filterTopN ${filterTopN} --alg ${alg}
+
+
